@@ -1,5 +1,5 @@
 
-export const BASE_URL = "https://task-manager-back-end-phi.vercel.app";
+export const BASE_URL = "https://task-manager-backend-9sjd.onrender.com";
 
 export const API_PATHS ={
     AUTH:{
