@@ -30,12 +30,18 @@ function SideMenu({ activeMenu }) {
     return () => { };
   }, [user]);
 
+    const imageBaseURL = "https://task-manager-backend-9sjd.onrender.com";
+
+const correctedImageUrl = user?.profileImageUrl?.includes("localhost")
+  ? user.profileImageUrl.replace("http://localhost:8000", imageBaseURL)
+  : user?.profileImageUrl;
+
   return (
     <div className='w-full max-w-xs h-full md:h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 md:sticky md:top-[61px] z-20 overflow-y-auto'>
       <div className='flex flex-col items-center justify-center mb-7 pt-5'>
         <div className='relative'>
           <img
-            src={user?.profileImageUrl || "/default-avatar.png"}
+            src={correctedImageUrl || "/default-avatar.png"}
             alt='Profile Image'
             className='w-20 h-20 bg-slate-400 rounded-full object-cover'
           />
